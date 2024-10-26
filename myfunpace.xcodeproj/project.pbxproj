@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A613DF052CCDAA16007A7D36 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613DF042CCDAA16007A7D36 /* UIView+Extensions.swift */; };
 		A6A560BC2CCD91A400996424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560BB2CCD91A400996424 /* AppDelegate.swift */; };
 		A6A560BE2CCD91A400996424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560BD2CCD91A400996424 /* SceneDelegate.swift */; };
 		A6A560C02CCD91A400996424 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560BF2CCD91A400996424 /* SummaryViewController.swift */; };
@@ -17,8 +18,8 @@
 		A6A560DF2CCD91A500996424 /* myfunpaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560DE2CCD91A500996424 /* myfunpaceUITestsLaunchTests.swift */; };
 		A6A560F02CCD933D00996424 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560EF2CCD933D00996424 /* SummaryViewModel.swift */; };
 		A6A560F62CCD9DD400996424 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560F52CCD9DD400996424 /* Date+Extensions.swift */; };
-		A6A560FD2CCDA2EF00996424 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6A560FC2CCDA2EF00996424 /* SnapKit */; };
 		A6A560F92CCDA25300996424 /* StepSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560F82CCDA25300996424 /* StepSummaryCell.swift */; };
+		A6A560FD2CCDA2EF00996424 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6A560FC2CCDA2EF00996424 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A613DF042CCDAA16007A7D36 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A6A560B82CCD91A400996424 /* myfunpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myfunpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A560BB2CCD91A400996424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A560BD2CCD91A400996424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,15 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				A6A560F52CCD9DD400996424 /* Date+Extensions.swift */,
+				A613DF042CCDAA16007A7D36 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A6A560FB2CCDA2EF00996424 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A6A560F72CCDA24B00996424 /* Cells */ = {
@@ -189,6 +185,13 @@
 				A6A560F82CCDA25300996424 /* StepSummaryCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A6A560FB2CCDA2EF00996424 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A613DF052CCDAA16007A7D36 /* UIView+Extensions.swift in Sources */,
 				A6A560F92CCDA25300996424 /* StepSummaryCell.swift in Sources */,
 				A6A560C02CCD91A400996424 /* SummaryViewController.swift in Sources */,
 				A6A560BC2CCD91A400996424 /* AppDelegate.swift in Sources */,

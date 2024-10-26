@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     private(set) lazy var dataSource: UICollectionViewDiffableDataSource<SummaryViewModel.Section, SummaryViewModel.Item> = {
         let summaryReg = UICollectionView.CellRegistration<StepSummaryCell, StepSummaryCell.ViewModel> { [weak self] (cell, indexPath, viewModel) in
-            
+            cell.configure(viewModel)
         }
         
         let dataSource = UICollectionViewDiffableDataSource<SummaryViewModel.Section, SummaryViewModel.Item>(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
@@ -50,6 +50,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.onSnapshotUpdate = { [weak self] snapshot in
+            self?.dataSource.apply(snapshot)
+        }
+        
         viewModel.viewDidLoad()
     }
     
