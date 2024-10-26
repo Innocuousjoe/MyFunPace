@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class SummaryViewController: UIViewController {
     private(set) lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
