@@ -9,18 +9,28 @@ class ViewController: UIViewController {
     }()
     
     private(set) lazy var layout: UICollectionViewCompositionalLayout = {
-        let layout = UICollectionViewCompositionalLayout { [unowned self] sectionIndex, environment in
-            let sectionItem = self.dataSource.snapshot().sectionIdentifiers[sectionIndex]
-            let layoutSection = self.layout(for: sectionItem)
-            
-            return layoutSection
+        var listConfig = UICollectionLayoutListConfiguration(appearance: .plain)
+        listConfig.separatorConfiguration.color = .tertiarySystemFill
+
+        let indexPathToHide = IndexPath()
+         
+        listConfig.itemSeparatorHandler = { (indexPath, sectionSeparatorConfiguration) in
+            var configuration = sectionSeparatorConfiguration
+            if indexPath == indexPathToHide {
+                configuration.bottomSeparatorVisibility = .hidden
+            }
+            return configuration
         }
+
+
+        let layout = UICollectionViewCompositionalLayout.list(using: listConfig)
         
         return layout
     }()
     
     private(set) lazy var dataSource: UICollectionViewDiffableDataSource<SummaryViewModel.Section, SummaryViewModel.Item> = {
         let summaryReg = UICollectionView.CellRegistration<StepSummaryCell, StepSummaryCell.ViewModel> { [weak self] (cell, indexPath, viewModel) in
+            cell.accessories = [.disclosureIndicator()]
             cell.configure(viewModel)
         }
         
