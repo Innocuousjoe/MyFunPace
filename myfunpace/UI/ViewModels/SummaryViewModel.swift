@@ -1,10 +1,20 @@
 import Foundation
 import CoreMotion
+import UIKit
 
-struct SummaryViewModel {
-    private let pedometer = CMPedometer()
+class SummaryViewModel {
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
     
-    private let dayToData: [Int: CMPedometerData] = [:]
+    enum Section: Hashable {
+        case stepList
+    }
+    
+    enum Item: Hashable {
+        case day(StepSummaryCell.ViewModel)
+    }
+    
+    private let pedometer = CMPedometer()
+    private var dayToData: [Int: CMPedometerData] = [:]
     
     func viewDidLoad() {
         if CMPedometer.isStepCountingAvailable() {
