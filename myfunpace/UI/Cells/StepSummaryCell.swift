@@ -26,6 +26,7 @@ class StepSummaryCell: UICollectionViewListCell {
         return view
     }()
     
+    var viewModel: ViewModel?
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -47,6 +48,7 @@ class StepSummaryCell: UICollectionViewListCell {
     }
     
     func configure(_ viewModel: ViewModel) {
+        self.viewModel = viewModel
         dayLabel.text = Date.appleDayOfWeek(Calendar.current.component(.weekday, from: viewModel.date))
         stepCountLabel.text = "Total steps: \(viewModel.steps)"
     }

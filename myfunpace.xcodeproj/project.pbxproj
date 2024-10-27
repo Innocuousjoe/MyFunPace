@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A613DF052CCDAA16007A7D36 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613DF042CCDAA16007A7D36 /* UIView+Extensions.swift */; };
+		A613DF072CCDC1FC007A7D36 /* StepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613DF062CCDC1FC007A7D36 /* StepDetailViewController.swift */; };
+		A613DF0A2CCDC796007A7D36 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613DF092CCDC796007A7D36 /* CircleView.swift */; };
+		A613DF0E2CCDCB57007A7D36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613DF0D2CCDCB57007A7D36 /* Constants.swift */; };
 		A6A560BC2CCD91A400996424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560BB2CCD91A400996424 /* AppDelegate.swift */; };
 		A6A560BE2CCD91A400996424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560BD2CCD91A400996424 /* SceneDelegate.swift */; };
 		A6A560C02CCD91A400996424 /* StepSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560BF2CCD91A400996424 /* StepSummaryViewController.swift */; };
@@ -41,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		A613DF042CCDAA16007A7D36 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A613DF062CCDC1FC007A7D36 /* StepDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetailViewController.swift; sourceTree = "<group>"; };
+		A613DF092CCDC796007A7D36 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		A613DF0D2CCDCB57007A7D36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6A560B82CCD91A400996424 /* myfunpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myfunpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A560BB2CCD91A400996424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A560BD2CCD91A400996424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A613DF082CCDC78E007A7D36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A613DF092CCDC796007A7D36 /* CircleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A613DF0C2CCDCB4D007A7D36 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A613DF0D2CCDCB57007A7D36 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		A6A560AF2CCD91A400996424 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +161,7 @@
 		A6A560EB2CCD932600996424 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A613DF082CCDC78E007A7D36 /* Views */,
 				A6A560F72CCDA24B00996424 /* Cells */,
 				A6A560EE2CCD933400996424 /* ViewModels */,
 				A6A560EC2CCD932B00996424 /* ViewControllers */,
@@ -150,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A6A560BF2CCD91A400996424 /* StepSummaryViewController.swift */,
+				A613DF062CCDC1FC007A7D36 /* StepDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -165,6 +189,7 @@
 		A6A560F12CCD9DBC00996424 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				A613DF0C2CCDCB4D007A7D36 /* Constants */,
 				A6A560F42CCD9DCD00996424 /* Extensions */,
 			);
 			path = Domain;
@@ -330,13 +355,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A613DF0A2CCDC796007A7D36 /* CircleView.swift in Sources */,
 				A613DF052CCDAA16007A7D36 /* UIView+Extensions.swift in Sources */,
 				A6A560F92CCDA25300996424 /* StepSummaryCell.swift in Sources */,
 				A6A560C02CCD91A400996424 /* StepSummaryViewController.swift in Sources */,
 				A6A560BC2CCD91A400996424 /* AppDelegate.swift in Sources */,
+				A613DF0E2CCDCB57007A7D36 /* Constants.swift in Sources */,
 				A6A560BE2CCD91A400996424 /* SceneDelegate.swift in Sources */,
 				A6A560F62CCD9DD400996424 /* Date+Extensions.swift in Sources */,
 				A6A560F02CCD933D00996424 /* SummaryViewModel.swift in Sources */,
+				A613DF072CCDC1FC007A7D36 /* StepDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

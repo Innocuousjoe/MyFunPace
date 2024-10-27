@@ -4,6 +4,7 @@ import SnapKit
 class StepSummaryViewController: UIViewController {
     private(set) lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.delegate = self
         
         return view
     }()
@@ -81,3 +82,12 @@ class StepSummaryViewController: UIViewController {
     }
 }
 
+//MARK: UICollectionViewDelegate
+extension StepSummaryViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? StepSummaryCell, 
+            let viewModel = cell.viewModel {
+            navigationController?.pushViewController(StepDetailViewController(viewModel.pedometerData), animated: true)
+        }
+    }
+}
