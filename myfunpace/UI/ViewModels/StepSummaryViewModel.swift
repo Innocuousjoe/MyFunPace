@@ -2,7 +2,7 @@ import Foundation
 import CoreMotion
 import UIKit
 
-class SummaryViewModel {
+class StepSummaryViewModel {
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
     
     enum Section: Hashable {
@@ -40,7 +40,7 @@ class SummaryViewModel {
                 }
             }
         } else {
-            let newData = MockPedometerData(steps: 101, date: Date(), distanceTravelled: 123)
+            let newData = MockPedometerData(steps: 5000, date: Date(), distanceTravelled: 123)
             
             dateToData.append((date: newData.date, data: newData))
             

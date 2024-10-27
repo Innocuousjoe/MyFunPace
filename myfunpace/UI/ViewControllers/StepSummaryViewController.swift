@@ -30,13 +30,13 @@ class StepSummaryViewController: UIViewController {
         return layout
     }()
     
-    private(set) lazy var dataSource: UICollectionViewDiffableDataSource<SummaryViewModel.Section, SummaryViewModel.Item> = {
+    private(set) lazy var dataSource: UICollectionViewDiffableDataSource<StepSummaryViewModel.Section, StepSummaryViewModel.Item> = {
         let summaryReg = UICollectionView.CellRegistration<StepSummaryCell, StepSummaryCell.ViewModel> { [weak self] (cell, indexPath, viewModel) in
             cell.accessories = [.disclosureIndicator()]
             cell.configure(viewModel)
         }
         
-        let dataSource = UICollectionViewDiffableDataSource<SummaryViewModel.Section, SummaryViewModel.Item>(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
+        let dataSource = UICollectionViewDiffableDataSource<StepSummaryViewModel.Section, StepSummaryViewModel.Item>(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
             switch itemIdentifier {
             case let .day(viewModel):
                 return collectionView.dequeueConfiguredReusableCell(using: summaryReg, for: indexPath, item: viewModel)
@@ -46,9 +46,9 @@ class StepSummaryViewController: UIViewController {
         return dataSource
     }()
 
-    let viewModel: SummaryViewModel
+    let viewModel: StepSummaryViewModel
     init() {
-        viewModel = SummaryViewModel(CMPedometer())
+        viewModel = StepSummaryViewModel(CMPedometer())
         super.init(nibName: nil, bundle: nil)
         view.addSubview(collectionView)
         
@@ -70,7 +70,7 @@ class StepSummaryViewController: UIViewController {
     }
     
     //MARK: Private
-    private func layout(for section: SummaryViewModel.Section) -> NSCollectionLayoutSection {
+    private func layout(for section: StepSummaryViewModel.Section) -> NSCollectionLayoutSection {
         switch section {
         case .stepList:
             let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))

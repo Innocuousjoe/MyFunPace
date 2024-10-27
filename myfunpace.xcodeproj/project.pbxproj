@@ -22,7 +22,7 @@
 		A6A560D32CCD91A500996424 /* summaryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560D22CCD91A500996424 /* summaryViewModelTests.swift */; };
 		A6A560DD2CCD91A500996424 /* myfunpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560DC2CCD91A500996424 /* myfunpaceUITests.swift */; };
 		A6A560DF2CCD91A500996424 /* myfunpaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560DE2CCD91A500996424 /* myfunpaceUITestsLaunchTests.swift */; };
-		A6A560F02CCD933D00996424 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560EF2CCD933D00996424 /* SummaryViewModel.swift */; };
+		A6A560F02CCD933D00996424 /* StepSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560EF2CCD933D00996424 /* StepSummaryViewModel.swift */; };
 		A6A560F62CCD9DD400996424 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560F52CCD9DD400996424 /* Date+Extensions.swift */; };
 		A6A560F92CCDA25300996424 /* StepSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A560F82CCDA25300996424 /* StepSummaryCell.swift */; };
 		A6A560FD2CCDA2EF00996424 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6A560FC2CCDA2EF00996424 /* SnapKit */; };
@@ -65,7 +65,7 @@
 		A6A560D82CCD91A500996424 /* myfunpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myfunpaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A560DC2CCD91A500996424 /* myfunpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myfunpaceUITests.swift; sourceTree = "<group>"; };
 		A6A560DE2CCD91A500996424 /* myfunpaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myfunpaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A6A560EF2CCD933D00996424 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		A6A560EF2CCD933D00996424 /* StepSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSummaryViewModel.swift; sourceTree = "<group>"; };
 		A6A560F52CCD9DD400996424 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A6A560F82CCDA25300996424 /* StepSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSummaryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,7 +204,7 @@
 		A6A560EE2CCD933400996424 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A6A560EF2CCD933D00996424 /* SummaryViewModel.swift */,
+				A6A560EF2CCD933D00996424 /* StepSummaryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -391,7 +391,7 @@
 				A613DF162CCEF0F3007A7D36 /* Array+Extensions.swift in Sources */,
 				A613DF142CCEEA4C007A7D36 /* MockPedometerData.swift in Sources */,
 				A6A560F62CCD9DD400996424 /* Date+Extensions.swift in Sources */,
-				A6A560F02CCD933D00996424 /* SummaryViewModel.swift in Sources */,
+				A6A560F02CCD933D00996424 /* StepSummaryViewModel.swift in Sources */,
 				A613DF072CCDC1FC007A7D36 /* StepDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

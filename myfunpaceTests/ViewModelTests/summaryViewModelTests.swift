@@ -12,7 +12,7 @@ final class myfunpaceTests: XCTestCase {
     }
 
     func testViewDidLoad() throws {
-        let viewModel = SummaryViewModel(MockPedometer())
+        let viewModel = StepSummaryViewModel(MockPedometer())
         
         var calledSnapshotUpdate: Bool = false
         viewModel.onSnapshotUpdate = { snapshot in
