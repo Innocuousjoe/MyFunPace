@@ -59,6 +59,6 @@ class StepSummaryCell: UICollectionViewListCell {
     func configure(_ viewModel: ViewModel) {
         self.viewModel = viewModel
         dayLabel.text = Date.appleDayOfWeek(Calendar.current.component(.weekday, from: viewModel.date))
-        stepCountLabel.text = "Total steps: \(viewModel.steps)"
+        stepCountLabel.text = "Total steps: \(String(format: "%.0f", viewModel.steps))"
     }
 }
