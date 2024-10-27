@@ -12,9 +12,9 @@ class StepDetailViewController: UIViewController {
     }()
     
     private var circleLayer: CAShapeLayer!
-    private let data: PedometerData
-    init(_ data: PedometerData) {
-        self.data = data
+    private let viewModel: StepDetailViewModel
+    init(_ viewModel: StepDetailViewModel) {
+        self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
         

@@ -88,7 +88,10 @@ extension StepSummaryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? StepSummaryCell, 
             let viewModel = cell.viewModel {
-            navigationController?.pushViewController(StepDetailViewController(viewModel.pedometerData), animated: true)
+            navigationController?.pushViewController(
+                StepDetailViewController(.init(viewModel.pedometerData)),
+                animated: true
+            )
         }
     }
 }
