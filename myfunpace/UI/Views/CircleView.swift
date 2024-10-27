@@ -14,21 +14,19 @@ class CircleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addAndDraw(duration: TimeInterval, percentage: Double) {
+    func addAndDraw(duration: TimeInterval, percentage: CGFloat) {
         self.backgroundColor = .clear
             
         // Use UIBezierPath as an easy way to create the CGPath for the layer.
         // The path should be the entire circle.
-        let startAngle = CGFloat((Double.pi * 3) / 4)
-        let endAngle = CGFloat(Double.pi / 4)
         let circlePath = UIBezierPath(
             arcCenter: CGPoint(
                 x: frame.size.width / 2.0,
                 y: frame.size.height / 2.0
             ),
             radius: (frame.size.width - 10)/2,
-            startAngle: startAngle,
-            endAngle:  (endAngle - startAngle) * percentage,
+            startAngle: CGFloat(Double.pi),
+            endAngle: CGFloat(Double.pi) + CGFloat(Double.pi * percentage),
             clockwise: true
         )
         
