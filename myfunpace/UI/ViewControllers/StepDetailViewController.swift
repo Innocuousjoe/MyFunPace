@@ -11,6 +11,14 @@ class StepDetailViewController: UIViewController {
         return view
     }()
     
+    private(set) lazy var dateLabel: UILabel = {
+        let view = UILabel()
+        view.text = viewModel.dateString
+        view.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        
+        return view
+    }()
+    
     private var circleLayer: CAShapeLayer!
     private let viewModel: StepDetailViewModel
     init(_ viewModel: StepDetailViewModel) {
@@ -18,12 +26,14 @@ class StepDetailViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        view.addSubviews(goalCircle)
+        view.addSubviews(goalCircle, dateLabel)
         goalCircle.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.trailing.equalToSuperview().inset(10)
             make.height.equalTo(view.frame.width)
         }
+        
+        dateLabel.snp.makeConstraints { $0.center.equalTo(goalCircle.snp.center) }
     }
     
     required init?(coder: NSCoder) {

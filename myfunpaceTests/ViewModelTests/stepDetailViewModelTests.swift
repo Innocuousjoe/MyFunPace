@@ -12,8 +12,13 @@ final class stepDetailViewModelTests: XCTestCase {
     }
 
     func testInstantiation() throws {
-        let viewModel = StepDetailViewModel(MockPedometerData(steps: 123, date: Date(), distanceTravelled: 0.123))
+        let now = Date()
+        let viewModel = StepDetailViewModel(MockPedometerData(steps: 123, date: now, distanceTravelled: 0.123))
         
         XCTAssertTrue(viewModel.stepCount == 123)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
+        XCTAssertTrue(viewModel.dateString == dateFormatter.string(from:now))
     }
 }
