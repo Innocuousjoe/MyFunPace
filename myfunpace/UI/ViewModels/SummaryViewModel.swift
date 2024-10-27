@@ -16,7 +16,7 @@ class SummaryViewModel {
     var onSnapshotUpdate: ((_ snapshot: Snapshot) -> Void)?
     
     private let pedometer = CMPedometer()
-    private var dateToData: [(date: Date, data: CMPedometerData)] = []
+    private var dateToData: [(date: Date, data: PedometerData)] = []
     
     func viewDidLoad() {
         if CMPedometer.isStepCountingAvailable() {
@@ -28,13 +28,19 @@ class SummaryViewModel {
                         self?.dateToData.append((date: date, data: data))
                         
                         if delta == 6 {
-                            DispatchQueue.main.async {                            
+                            DispatchQueue.main.async {
                                 self?.updateSnapshot()
                             }
                         }
                     }
                 }
             }
+        } else {
+            let newData = MockPedometerData(steps: 101, date: Date(), distanceTravelled: 123)
+            
+            dateToData.append((date: newData.date, data: newData))
+            
+            updateSnapshot()
         }
     }
     

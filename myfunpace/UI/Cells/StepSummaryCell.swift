@@ -4,11 +4,20 @@ import CoreMotion
 
 class StepSummaryCell: UICollectionViewListCell {
     struct ViewModel: Hashable {
-        var steps: NSNumber {
-            pedometerData.numberOfSteps
+        var steps: Double {
+            pedometerData.steps
         }
         let date: Date
-        let pedometerData: CMPedometerData
+        let pedometerData: PedometerData
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(steps)
+            hasher.combine(date)
+        }
+        
+        static func == (lhs: StepSummaryCell.ViewModel, rhs: StepSummaryCell.ViewModel) -> Bool {
+            lhs.steps == rhs.steps && lhs.date == rhs.date
+        }
     }
     
     private(set) lazy var dayLabel: UILabel = {

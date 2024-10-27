@@ -12,8 +12,8 @@ class StepDetailViewController: UIViewController {
     }()
     
     private var circleLayer: CAShapeLayer!
-    private let data: CMPedometerData
-    init(_ data: CMPedometerData) {
+    private let data: PedometerData
+    init(_ data: PedometerData) {
         self.data = data
         
         super.init(nibName: nil, bundle: nil)
@@ -39,6 +39,6 @@ class StepDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        goalCircle.addAndDraw(duration: 1, percentage: Double(truncating: data.numberOfSteps) / Constants.stepGoal)
+        goalCircle.addAndDraw(duration: 1, percentage: data.steps / Constants.stepGoal)
     }
 }
