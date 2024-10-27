@@ -15,15 +15,19 @@ class SummaryViewModel {
     
     var onSnapshotUpdate: ((_ snapshot: Snapshot) -> Void)?
     
-    private let pedometer = CMPedometer()
     private var dateToData: [(date: Date, data: PedometerData)] = []
+    private let pedometer: Pedometer
+    
+    init(_ pedometer: Pedometer) {
+        self.pedometer = pedometer
+    }
     
     func viewDidLoad() {
-        if CMPedometer.isStepCountingAvailable() {
+        if pedometer.isCountingAvailable {
             let now = Date()
             for delta in 0...6 {
                 if let date = Calendar.current.date(byAdding: .day, value: -delta, to: now) {
-                    pedometer.queryPedometerData(from: date.startOfDay, to: date.endOfDay) { [weak self] data, error in
+                    pedometer.pedometerData(from: date.startOfDay, to: date.endOfDay) { [weak self] data, error in
                         guard let data, error == nil else { return }
                         self?.dateToData.append((date: date, data: data))
                         

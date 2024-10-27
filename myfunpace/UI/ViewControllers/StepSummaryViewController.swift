@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import CoreMotion
 
 class StepSummaryViewController: UIViewController {
     private(set) lazy var collectionView: UICollectionView = {
@@ -47,7 +48,7 @@ class StepSummaryViewController: UIViewController {
 
     let viewModel: SummaryViewModel
     init() {
-        viewModel = SummaryViewModel()
+        viewModel = SummaryViewModel(CMPedometer())
         super.init(nibName: nil, bundle: nil)
         view.addSubview(collectionView)
         
