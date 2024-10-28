@@ -22,7 +22,8 @@ class StepSummaryViewModel {
         self.pedometer = pedometer
     }
     
-    func viewDidLoad() {
+    func viewWillAppear() {
+        dateToData = []
         if pedometer.isCountingAvailable {
             let now = Date()
             for delta in 0...6 {

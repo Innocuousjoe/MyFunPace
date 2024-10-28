@@ -65,8 +65,12 @@ class StepSummaryViewController: UIViewController {
         viewModel.onSnapshotUpdate = { [weak self] snapshot in
             self?.dataSource.apply(snapshot)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        viewModel.viewDidLoad()
+        viewModel.viewWillAppear()
     }
     
     //MARK: Private
