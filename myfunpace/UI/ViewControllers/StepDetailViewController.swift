@@ -14,7 +14,10 @@ class StepDetailViewController: UIViewController {
     private(set) lazy var dateLabel: UILabel = {
         let view = UILabel()
         view.text = viewModel.dateString
+        view.textAlignment = .center
         view.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        view.adjustsFontSizeToFitWidth = true
+        view.minimumScaleFactor = 0.5
         
         return view
     }()
@@ -68,7 +71,11 @@ class StepDetailViewController: UIViewController {
             make.bottom.equalTo(dateLabel.snp.top).offset(-20)
             make.centerX.equalToSuperview()
         }
-        dateLabel.snp.makeConstraints { $0.center.equalTo(goalCircle.snp.center) }
+        dateLabel.snp.makeConstraints { make in
+            make.leading.trailing.greaterThanOrEqualToSuperview().inset(25)
+            make.center.equalTo(goalCircle.snp.center)
+        }
+        
         infoStack.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview().inset(10)
