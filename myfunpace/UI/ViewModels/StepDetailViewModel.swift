@@ -56,7 +56,7 @@ class StepDetailViewModel {
     }
     
     var distanceString: NSMutableAttributedString {
-        let distance: Float = data.metersDist
+        let distance: Double = data.metersDist
         let base = NSMutableAttributedString(string: "\(String(format: "%.0f", distance)) meters traveled")
         base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "meters traveled")
         

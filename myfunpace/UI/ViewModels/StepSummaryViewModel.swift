@@ -40,10 +40,7 @@ class StepSummaryViewModel {
                 }
             }
         } else {
-            let newData = MockPedometerData(steps: 5000, date: Date(), distanceTravelled: 123)
-            
-            dateToData.append((date: newData.date, data: newData))
-            
+            generateMockData()
             updateSnapshot()
         }
     }
@@ -57,5 +54,23 @@ class StepSummaryViewModel {
         sorted.forEach { snapshot.appendItems([.day(.init(date: $0.date, pedometerData: $0.data))])}
         
         onSnapshotUpdate?(snapshot)
+    }
+    
+    private func generateMockData() {
+        let now = Date()
+        for delta in 0...6 {
+            if let date = Calendar.current.date(byAdding: .day, value: -delta, to: now) {
+                let mockData = MockPedometerData(
+                    steps: Double.random(in: 0...10000),
+                    date: date,
+                    ascended: Int.random(in: 0...50),
+                    descended: Int.random(in: 0...50),
+                    averagePace: Float.random(in: 0...1),
+                    metersDist: Double.random(in: 0...10000)
+                )
+                
+                dateToData.append((date: date, data: mockData))
+            }
+        }
     }
 }

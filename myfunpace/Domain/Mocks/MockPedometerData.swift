@@ -6,10 +6,6 @@ extension CMPedometerData: PedometerData {
         return numberOfSteps.doubleValue
     }
 
-    var distanceTravelled: Double {
-        return distance?.doubleValue ?? 0
-    }
-    
     var date: Date {
         startDate.startOfDay
     }
@@ -26,19 +22,18 @@ extension CMPedometerData: PedometerData {
         averageActivePace?.floatValue ?? 0
     }
     
-    var metersDist: Float {
-        distance?.floatValue ?? 0
+    var metersDist: Double {
+        distance?.doubleValue ?? 0
     }
 }
 
 protocol PedometerData {
     var steps: Double { get }
-    var distanceTravelled: Double { get }
     var date: Date { get }
     var ascended: Int { get }
     var descended: Int { get }
     var averagePace: Float { get }
-    var metersDist: Float { get }
+    var metersDist: Double { get }
 }
 
 struct MockPedometerData: PedometerData {
@@ -48,7 +43,7 @@ struct MockPedometerData: PedometerData {
     var ascended: Int
     var descended: Int
     var averagePace: Float
-    var metersDist: Float
+    var metersDist: Double
     
     init(
         steps: Double, 
@@ -57,7 +52,7 @@ struct MockPedometerData: PedometerData {
         ascended: Int = 0,
         descended: Int = 0,
         averagePace: Float = 0,
-        metersDist: Float = 0
+        metersDist: Double = 0
     ) {
         self.steps = steps
         self.date = date
