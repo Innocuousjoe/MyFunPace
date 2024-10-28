@@ -3,7 +3,7 @@
 ## Usage
 This is a straightforward, plug and play Pedometer that shows your step count over the last 7 days or, lacking that, some mocked data.
 
-Load the app through Xcode using your preferred target, or by going to the external testing link [to be determiend](https://www.google.com).
+Load the app through Xcode using your preferred target, or by going to the external testing link [here](https://testflight.apple.com/join/DvNAC9Pe).
 
 Clicking on any given day will bring you to a detailed view that will show you how close you were to hitting the recommended 10,000 steps per day, as well as a bit more information on how your day went.
 
@@ -18,9 +18,10 @@ SnapKit: plug and play DSL for `NSLayoutConstraint`
 
 # Roadmap
 ## User Facing
-1. Active updates - show step count change while app is open
-2. Support dark mode
-3. Support landscape
+1. iPad support
+2. Active updates - show step count change while app is open
+3. Support dark mode
+4. Support landscape
 
 ## Internal
 1. Add generator for mocks
