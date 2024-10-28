@@ -38,6 +38,30 @@ class StepDetailViewModel {
         
         return base
     }
+
+    var floorsString: NSMutableAttributedString {
+        let base = NSMutableAttributedString(string: "\(data.ascended) floors ascended, \(data.descended) floors descended")
+        base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "floors ascended,")
+        base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "floors descended")
+        
+        return base
+    }
+    
+    var averagePaceString: NSMutableAttributedString {
+        let avgPace = data.averagePace
+        let base = NSMutableAttributedString(string: "\(avgPace) seconds per meter")
+        base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "seconds per meter")
+        
+        return base
+    }
+    
+    var distanceString: NSMutableAttributedString {
+        let distance: Float = data.metersDist
+        let base = NSMutableAttributedString(string: "\(String(format: "%.0f", distance)) meters traveled")
+        base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "meters traveled")
+        
+        return base
+    }
     
     private let data: PedometerData
     init(_ data: PedometerData) {

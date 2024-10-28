@@ -13,7 +13,17 @@ final class stepDetailViewModelTests: XCTestCase {
 
     func testInstantiation() throws {
         let now = Date()
-        let viewModel = StepDetailViewModel(MockPedometerData(steps: 123, date: now, distanceTravelled: 0.123))
+        let viewModel = StepDetailViewModel(
+            MockPedometerData(
+                steps: 123, 
+                date: now,
+                distanceTravelled: 0.123,
+                ascended: 3,
+                descended: 2,
+                averagePace: 0.123,
+                metersDist: 4321
+            )
+        )
         
         XCTAssertTrue(viewModel.stepCount == 123)
         
@@ -22,5 +32,8 @@ final class stepDetailViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.dateString == dateFormatter.string(from:now))
         
         XCTAssertTrue(viewModel.stepAttributedString.string == "123 / 10,000")
+        XCTAssertTrue(viewModel.floorsString.string == "3 floors ascended, 2 floors descended")
+        XCTAssertTrue(viewModel.averagePaceString.string == "0.123 seconds per meter")
+        XCTAssertTrue(viewModel.distanceString.string == "4321 meters traveled")
     }
 }

@@ -26,14 +26,39 @@ class StepDetailViewController: UIViewController {
         return view
     }()
     
+    private(set) lazy var floorsLabel: UILabel = {
+        let view = UILabel()
+        view.attributedText = viewModel.floorsString
+        
+        return view
+    }()
+    
+    private(set) lazy var paceLabel: UILabel = {
+        let view = UILabel()
+        view.attributedText = viewModel.averagePaceString
+        
+        return view
+    }()
+    
+    private(set) lazy var distanceLabel: UILabel = {
+        let view = UILabel()
+        view.attributedText = viewModel.distanceString
+        
+        return view
+    }()
+    
     private var circleLayer: CAShapeLayer!
     private let viewModel: StepDetailViewModel
     init(_ viewModel: StepDetailViewModel) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
+       
+        let infoStack = UIStackView(arrangedSubviews: [floorsLabel, paceLabel, distanceLabel])
+        infoStack.axis = .vertical
+        infoStack.spacing = 20
         
-        view.addSubviews(goalCircle, stepDetailLabel, dateLabel)
+        view.addSubviews(goalCircle, stepDetailLabel, dateLabel, infoStack)
         goalCircle.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.trailing.equalToSuperview().inset(10)
@@ -44,6 +69,10 @@ class StepDetailViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         dateLabel.snp.makeConstraints { $0.center.equalTo(goalCircle.snp.center) }
+        infoStack.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(10)
+        }
     }
     
     required init?(coder: NSCoder) {
