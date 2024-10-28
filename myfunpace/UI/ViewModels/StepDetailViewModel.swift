@@ -41,8 +41,8 @@ class StepDetailViewModel {
 
     var floorsString: NSMutableAttributedString {
         let base = NSMutableAttributedString(string: "\(data.ascended) floors ascended, \(data.descended) floors descended")
-        base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "floors ascended,")
-        base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "floors descended")
+        base.apply(attribute: .foregroundColor, value: UIColor.gray, to: "floors ascended,")
+        base.apply(attribute: .foregroundColor, value: UIColor.gray, to: "floors descended")
         
         return base
     }
@@ -50,7 +50,7 @@ class StepDetailViewModel {
     var averagePaceString: NSMutableAttributedString {
         let avgPace = data.averagePace
         let base = NSMutableAttributedString(string: "\(avgPace) seconds per meter")
-        base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "seconds per meter")
+        base.apply(attribute: .foregroundColor, value: UIColor.gray, to: "seconds per meter")
         
         return base
     }
@@ -58,7 +58,7 @@ class StepDetailViewModel {
     var distanceString: NSMutableAttributedString {
         let distance: Double = data.metersDist
         let base = NSMutableAttributedString(string: "\(String(format: "%.0f", distance)) meters traveled")
-        base.apply(attribute: .foregroundColor, value: UIColor.darkGray, to: "meters traveled")
+        base.apply(attribute: .foregroundColor, value: UIColor.gray, to: "meters traveled")
         
         return base
     }
