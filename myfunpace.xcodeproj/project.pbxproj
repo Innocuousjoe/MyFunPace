@@ -593,6 +593,7 @@
 				DEVELOPMENT_TEAM = G6SE7832JT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myfunpace/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyFunPace;
 				INFOPLIST_KEY_NSMotionUsageDescription = "Granting permission will allow the app to track your step count!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -625,6 +626,7 @@
 				DEVELOPMENT_TEAM = G6SE7832JT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myfunpace/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyFunPace;
 				INFOPLIST_KEY_NSMotionUsageDescription = "Granting permission will allow the app to track your step count!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
