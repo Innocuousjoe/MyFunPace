@@ -12,4 +12,5 @@ Clicking on any given day will bring you to a detailed view that will show you h
 1. Active updates - show step count change while app is open
 
 ## Internal
-2. Add generator for mocks
+1. Add generator for mocks
+2. Remove test dependency on production code (injectable mocks, or something along those lines)

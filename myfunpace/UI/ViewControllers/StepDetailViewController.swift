@@ -19,6 +19,13 @@ class StepDetailViewController: UIViewController {
         return view
     }()
     
+    private(set) lazy var stepDetailLabel: UILabel = {
+        let view = UILabel()
+        view.attributedText = viewModel.stepAttributedString
+        
+        return view
+    }()
+    
     private var circleLayer: CAShapeLayer!
     private let viewModel: StepDetailViewModel
     init(_ viewModel: StepDetailViewModel) {
@@ -26,13 +33,16 @@ class StepDetailViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        view.addSubviews(goalCircle, dateLabel)
+        view.addSubviews(goalCircle, stepDetailLabel, dateLabel)
         goalCircle.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.trailing.equalToSuperview().inset(10)
             make.height.equalTo(view.frame.width)
         }
-        
+        stepDetailLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(dateLabel.snp.top).offset(-20)
+            make.centerX.equalToSuperview()
+        }
         dateLabel.snp.makeConstraints { $0.center.equalTo(goalCircle.snp.center) }
     }
     
@@ -49,6 +59,6 @@ class StepDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        goalCircle.addAndDraw(duration: 1, percentage: data.steps / Constants.stepGoal)
+        goalCircle.addAndDraw(duration: 0.25, percentage: viewModel.stepCount / Constants.stepGoal)
     }
 }

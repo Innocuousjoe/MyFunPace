@@ -20,5 +20,7 @@ final class stepDetailViewModelTests: XCTestCase {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         XCTAssertTrue(viewModel.dateString == dateFormatter.string(from:now))
+        
+        XCTAssertTrue(viewModel.stepAttributedString.string == "123 / 10,000")
     }
 }
